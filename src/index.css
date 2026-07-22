@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*cambia cómo se calcula el tamaño de un elemento en CSS para que no se suman los márgenes al tamaño total.*/
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh; /* Ocupa toda la altura de la pantalla para que el chat aproveche el espacio completo */
+  background: #f0f2f5;
+  color: #1a1a1a;
+}
+
+header {
+  background: #075e54;
+  color: #fff;
+  padding: 12px 16px;
+}
+
+header h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto; /* Hace scroll solo en los mensajes, el header y el input se quedan fijos */
+  padding: 12px;
+}
+
+#messages {
+  display: flex;
+  flex-direction: column; /* Apila los mensajes uno debajo del otro como en cualquier app de chat */
+  gap: 8px; /*es el espacio entre elementos dentro de un contenedor*/
+  max-width: 100%;
+}
+
+footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 8px 12px;
+}
+
+#chat-form {
+  display: flex;
+  gap: 8px;
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+#message-input:focus {
+  border-color: #075e54;
+}
+
+#chat-form button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  background: #075e54;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#chat-form button:hover {
+  background: #064842;
+}
+
+.message {
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* Usuario a la derecha (verde) y personaje a la izquierda (blanco) para diferenciarlos */
+
+.message.user {
+  align-self: flex-end;
+  background: #dcf8c6;
+  border-bottom-right-radius: 4px;
+}
+
+.message.character {
+  align-self: flex-start;
+  background: #fff;
+  border-bottom-left-radius: 4px;
+}
+
+
+
+/* Tablet: 768px */
+/* El chat se centra como una tarjeta con espacio vacio a los lados */
+
+@media (min-width: 768px) {
+  body {
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  header {
+    padding: 14px 24px;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  main {
+    padding: 16px 24px;
+  }
+
+  footer {
+    padding: 10px 24px;
+  }
+
+  .message {
+    max-width: 65%;
+  }
+}
+
+/* Desktop: 1024px */
+/* Tarjeta mas ancha y mas comoda para pantallas grandes */
+
+@media (min-width: 1024px) {
+  body {
+    max-width: 800px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  header {
+    padding: 16px 32px;
+  }
+
+  main {
+    padding: 20px 32px;
+  }
+
+  footer {
+    padding: 12px 32px;
+  }
+
+  .message {
+    max-width: 55%;
+    font-size: 1rem;
+  }
+}
