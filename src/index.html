@@ -9,18 +9,25 @@
 <body>
   <header>
     <h1>ComicSansCon Chat</h1>
+    
+    <nav>
+      <a href="/home" class="nav-link">Inicio</a>
+      <a href="/chat" class="nav-link">Chat</a>
+      <a href="/about" class="nav-link">Acerca de</a>
+    </nav>
+    
   </header>
 
   <main>
     <div id="messages">
-      <div class="message user">Hola, quién eres tu</div>
-      <div class="message character">Soy ...</div>
+      <div class="message user">Hola, quien eres?</div>
+      <div class="message character">Soy Sheldon Cooper, fisico teorico de Caltech.</div>
     </div>
   </main>
 
   <footer>
     <form id="chat-form">
-      <inputs
+      <input
         type="text"
         id="message-input"
         placeholder="Escribe un mensaje..."
@@ -29,6 +36,12 @@
       <button type="submit">Enviar</button>
     </form>
   </footer>
+
+
+  
+  <script type="module" src="app.js"></script>
+  <script type="module" src="chat.js"></script>
 </body>
 </html>
+
 

@@ -27,10 +27,33 @@ header h1 {
   font-weight: 600;
 }
 
+header nav {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.nav-link {
+  color: #c5e8c8;
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
 main {
   flex: 1;
-  overflow-y: auto; /* Hace scroll solo en los mensajes, el header y el input se quedan fijos */
+  overflow-y: auto;
   padding: 12px;
+  background-color: #e5ddd5;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 18px 18px;
 }
 
 #messages {
@@ -58,6 +81,7 @@ footer {
   border-radius: 20px;
   font-size: 0.95rem;
   outline: none;
+  transition: border-color 0.2s ease;
 }
 
 #message-input:focus {
@@ -73,6 +97,7 @@ footer {
   font-size: 0.95rem;
   cursor: pointer;
   white-space: nowrap;
+  transition: background 0.2s ease;
 }
 
 #chat-form button:hover {
@@ -86,6 +111,54 @@ footer {
   font-size: 0.95rem;
   line-height: 1.4;
   word-wrap: break-word;
+  transition: background 0.2s ease;
+}
+
+.message.user:hover {
+  background: #c5e8a8;
+}
+
+.message.character:hover {
+  background: #e8e8e8;
+}
+
+.view {
+  padding: 16px 0;
+}
+
+.view h2 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #075e54;
+}
+
+.view h3 {
+  font-size: 1rem;
+  margin: 16px 0 8px;
+  color: #333;
+}
+
+.view p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+#start-chat-btn {
+  margin-top: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+  background: #075e54;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#start-chat-btn:hover {
+  background: #064842;
 }
 
 /* Usuario a la derecha (verde) y personaje a la izquierda (blanco) para diferenciarlos */
@@ -165,3 +238,4 @@ footer {
     font-size: 1rem;
   }
 }
+
